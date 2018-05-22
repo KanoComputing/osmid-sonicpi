@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+OSMID_VERSION=391f35f789f18126003d2edf32902eb714726802
+OSMID_DIR=osmid
+OSMID_BUILD_DIR=$(OSMID_DIR)/build
+OSMID_INSTALL_DIR=../../debian/osmid-sonicpi/usr/bin/
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	git clone https://github.com/llloret/osmid.git
+	cd $(OSMID_DIR) && git checkout ${OSMID_VERSION}
+	mkdir -p $(OSMID_BUILD_DIR)
+	cd $(OSMID_BUILD_DIR) && cmake ..
+	cd $(OSMID_BUILD_DIR) && make -j $(shell nproc)
+
+override_dh_auto_install:
+	cd $(OSMID_BUILD_DIR) && mkdir -p $(OSMID_INSTALL_DIR)
+	cd $(OSMID_BUILD_DIR) && install m2o o2m -t $(OSMID_INSTALL_DIR)
+

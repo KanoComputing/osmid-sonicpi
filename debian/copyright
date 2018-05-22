@@ -1,0 +1,8 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: osmid-sonicpi
+Upstream-Contact: Kano developers <dev@kano.me>
+Source: https://github.com/KanoComputing/osmid-sonicpi
+
+Files: *
+Copyright: 2018 Kano Computing Ltd.
+License: GPL-2+

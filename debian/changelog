@@ -1,0 +1,5 @@
+osmid-sonicpi (0.6.0-0) unstable; urgency=low
+
+  * Packaging of osmid 0.6 required for Sonic Pi
+
+ -- Team Kano <dev@kano.me>  Tue, 22 May 2018 11:20:00 +0000
